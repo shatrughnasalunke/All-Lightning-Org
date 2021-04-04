@@ -1,0 +1,6 @@
+<aura:component controller="CreateContactAuraMethod" implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+    <aura:method name="AuraMethodChild1" action="{!c.insertRecord}">
+        <aura:attribute name="lastname" type="String" default="Aura Method Contact"/>
+    </aura:method>    
+</aura:component>

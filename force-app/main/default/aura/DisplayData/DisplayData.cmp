@@ -1,0 +1,76 @@
+<aura:component controller="UserHistorySection" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="storedValue" type="Sobject"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:accordion >
+        <lightning:accordionSection name="Customer" label="Customer">
+            <aura:set attribute="body">
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                    <thead>
+                        <tr class="slds-text-title--caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Name">Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="FirstName">FirstName</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="LastName">LastName</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.storedValue.accList}" var="lea">
+                            <tr>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{#lea.Name}">{#lea.Name}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{#lea.FirstName}">{#lea.FirstName}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{#lea.LastName}">{#lea.LastName}</div>
+                                </th>
+                                
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </aura:set>
+        </lightning:accordionSection>
+        <!-- second section -->
+        <lightning:accordionSection name="Case" label="Case">
+            <aura:set attribute="body">
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                    <thead>
+                        <tr class="slds-text-title--caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Id">Id</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Name">Case Number</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="AccountName">Account Name</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.storedValue.caseList}" var="con">
+                            <tr>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{#con.Id}">{#con.Id}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{#con.CaseNumber}">{#con.CaseNumber}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{#con.Account.Name}">{#con.Account.Name}</div>
+                                </th>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </aura:set>
+        </lightning:accordionSection>
+    </lightning:accordion>
+</aura:component>

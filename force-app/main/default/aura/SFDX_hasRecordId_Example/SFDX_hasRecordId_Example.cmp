@@ -1,0 +1,7 @@
+<!--
+   Description : hasRecordIDExample  
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:lightningQuickAction" access="global">
+
+    Account Id is {!v.recordId}
+</aura:component>

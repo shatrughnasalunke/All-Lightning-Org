@@ -1,0 +1,6 @@
+<aura:component controller="sampleapexclass">
+
+    <aura:attribute name="getName" type="string" default="shatrughna" />
+    <lightning:button label="Click me " title="Click Me " variant="brand" onclick="{!c.callMe}" />
+
+</aura:component>

@@ -1,0 +1,40 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome">
+  <!--**
+* ─────────────────────────────────────────────────────────────────────────────────────────────────
+* Summary of this Component.
+*
+* Additional information:
+* 			           This Component is used to delete Beer Object record by using LDS 
+*					   concepts.
+* ──────────────────────────────────────────────────────────────────────────────────────────────────
+* @author         Shatrughna V. Salunke   <shatrughnasalunkhe@gmail.com>
+* @modifiedBy     Shatrughna V. Salunke   <shatrughnasalunkhe@gmail.com>
+* @maintainedBy   Shatrughna V. Salunke   <shatrughnasalunkhe@gmail.com>
+* @version        1.0
+* @created        31-March-2020
+* @modified       31-March-2020
+* ──────────────────────────────────────────────────────────────────────────────────────────────────
+**/-->
+  <!--Note :-  Make sure this i.e is LDS  component should be added in to the record pagelayout of perticular object  -->
+
+  <aura:attribute name="record" type="Object" />
+  <aura:attribute name="recordFields" type="Object" />
+  <aura:attribute name="recordError" type="String" />
+  <lightning:navigation aura:id="naveReference"/>
+  <!-- LDS for Deleting Record-->  
+  
+   <force:recordData
+    aura:id="recordHandler"
+    layoutType="FULL"
+    recordId="{!v.recordId}"                  
+    targetRecord="{!v.record}"
+    targetFields="{!v.recordFields}"
+    targetError="{!v.recordError}"
+  />
+   {!v.recordFields.Name}
+    
+ <div>     
+ 		
+		 <lightning:button label="Delete Record" value="Delete Record" onclick="{!c.handleDelete}"/>
+ </div>
+</aura:component>

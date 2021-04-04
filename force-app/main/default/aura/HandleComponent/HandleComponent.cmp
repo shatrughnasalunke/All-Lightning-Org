@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler  name="SourceEvent" event="c:ComponentEvent" action="{!c.handleComponentEvent}" includeFacets="true"/> 
+    <h1 class="slds-p-top_medium">
+       This is an Handler Component
+       {!v.body}
+    </h1>
+</aura:component>

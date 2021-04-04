@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable" controller="AccountListController">
+    <aura:attribute type="Account[]" name="acctList"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.fetchAccounts}"/>
+    <lightning:datatable getSelectedRows="true" aura:id="navigate" data="{!v.acctList }" 
+                         columns="{! v.mycolumns }" 
+                         keyField="Id"
+                         hideCheckboxColumn="true"/>
+</aura:component>

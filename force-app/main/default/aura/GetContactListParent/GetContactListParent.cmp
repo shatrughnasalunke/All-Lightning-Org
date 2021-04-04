@@ -1,0 +1,28 @@
+<aura:component controller ="TestApexClass">
+    <aura:handler name="eventName" event="c:ContactEvent" action="{!c.eventHandler}"/>
+    <aura:attribute name="contactdetails" type="Object"/>
+    <p>
+        Total Contact {!v.contactdetails.length}
+    </p>    
+        <table  aria-multiselectable="true" class="slds-table slds-table_bordered slds-table_fixed-layout slds-table_resizable-cols" role="grid">
+            <tr>
+                <th>
+                    Id 
+                </th>
+                <th>
+                    FirstName
+                </th> 
+                <th>
+                    Last Name
+                </th>  
+            </tr> 
+               <aura:iteration items="{!v.contactdetails}" var="item">
+            <tr>
+                <td>{!item.Id}</td>
+                <td>{!item.firstName}</td>
+                <td>{!item.LastName}</td>
+            </tr>    
+                </aura:iteration>
+        </table>   
+    <c:GetContactsListChild/>
+</aura:component>

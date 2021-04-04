@@ -1,0 +1,6 @@
+<aura:component controller="SearchRecordDynamic">
+    <c:search_record_chid_cmp/>
+    <aura:handler name="eventName" event="c:search_record" action="{!c.doInit}"/>
+    <aura:attribute name="wrapperList" type="object"/>
+    <c:SelectItem listrecord="{!v.wrapperList}"/>
+</aura:component>

@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global"
+                controller="fileViewerCtrl">
+
+    
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <lightning:button name="popover" label="Show Popover" onclick="{!c.handleShowPopover}"/>
+
+</aura:component>

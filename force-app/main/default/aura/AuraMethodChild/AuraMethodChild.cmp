@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:method name="auraMethodChild" action="{!c.createRecord}" access="public" >
+        <aura:attribute name="passparameter" type="String" default="Shatrughna"/>
+    </aura:method>
+</aura:component>

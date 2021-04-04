@@ -1,0 +1,18 @@
+<aura:component >
+    <aura:attribute name="Options" Type="List" Default="['Account','Contact','Case','Opportunity']" />
+    <aura:attribute name="accinfo" Type="String"/>
+    <lightning:tabset  variant="scoped">
+      <aura:iteration items="{!v.Options}" var="item">
+         <aura:if isTrue="{!item==Account}" > 
+           <lightning:tab  onactive="{! c.handleActive }" label="Account" id="{!item}">
+                {!v.accinfo}
+            </lightning:tab>
+               <aura:set attribute="else">
+                  <lightning:tab  onactive="{! c.handleActive }" label="Contact" id="{!item}" >
+                    {!v.accinfo}
+                 </lightning:tab>
+                </aura:set>
+           </aura:if>     
+       </aura:iteration>        
+    </lightning:tabset>    
+</aura:component>

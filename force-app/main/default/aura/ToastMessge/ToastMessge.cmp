@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <div>
+        <lightning:button label="Information"
+                          variant="brand"
+                          onclick="{!c.showInfo}"/>
+        <lightning:button label="Error"
+                          variant="destructive"
+                          onclick="{!c.showError}"/>
+        <lightning:button label="Warning"
+                          variant="neutral"
+                          onclick="{!c.showWarning}"/>
+        <lightning:button label="Success"
+                          variant="success"
+                          onclick="{!c.showSuccess}"/>
+    </div> 
+</aura:component>

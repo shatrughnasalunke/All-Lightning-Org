@@ -1,0 +1,3 @@
+<aura:component>
+    <lightning:button name="Fire Event" label="Fire Event" onclick="{!c.FireEvent}" />
+</aura:component>

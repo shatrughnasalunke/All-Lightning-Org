@@ -1,0 +1,24 @@
+<aura:component>
+
+    <!--Main menu parent component-->
+    <aura:attribute name="TabId" type="string" />
+    <aura:handler name="cmpEvent" event="c:SFDX_Component_Event" action="{!c.handleComponentEvent}" />
+    <lightning:tabset variant="vertical" selectedTabId="{!v.TabId}">
+        <lightning:tab id=" Item One" label="Live Farud">
+            <c:SFDX_Item_One />
+            <p>{!v.TabId}</p>
+        </lightning:tab>
+        <lightning:tab id="Item Two" label="Suspects">
+            <c:SFDX_suspects/>
+            <p>{!v.TabId}</p>
+        </lightning:tab>
+        <lightning:tab id="Item Three" label="CIFAS Log">
+            <c:SFDX_CIFAS_Log/>
+            <p>{!v.TabId}</p>
+        </lightning:tab>
+        <lightning:tab id="Item Four" label="Proactive Alert">
+            <c:SFDX_ProactiveAlert />
+            <p>{!v.TabId}</p>
+        </lightning:tab>
+    </lightning:tabset>
+</aura:component>

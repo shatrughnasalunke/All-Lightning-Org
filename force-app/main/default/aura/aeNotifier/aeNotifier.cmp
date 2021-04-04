@@ -1,0 +1,55 @@
+<!--c:aeNotifier-->
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:registerEvent name="appEvent" type="c:aeEvent"/>
+   
+    <aura:attribute name="ContactRecord" type="Contact" default="{
+                                                                 'sobjectType' : 'Contact',
+                                                                 'FirstName'   : '',
+                                                                 'LastName'    : '',
+                                                                 'Email'       : '',
+                                                                 'Title'       : '',
+                                                                 'Phone'       : ''
+                                                                 }"/>
+        
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning:input required="true" aura:id ="newContact" value="{!v.ContactRecord.FirstName}" name="FirstName" label="Enter a FirstName" />
+        </div>
+        
+        <div class="slds-col slds-size_1-of-2">
+            <lightning:input required="true" aura:id ="newContact" value="{!v.ContactRecord.LastName}" name="FirstName" label="Enter a LastName" />
+            
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters"> 
+        <div class="slds-col slds-size_1-of-2">
+            
+            <lightning:input required="true" aura:id ="newContact" value="{!v.ContactRecord.Email}" name="Email" label="Enter a Email" />
+            
+        </div>
+        
+        <div class="slds-col slds-size_1-of-2">
+            
+            <lightning:input required="true" aura:id ="newContact" value="{!v.ContactRecord.Title}" name="FirstName" label="Enter a Title" />
+            
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters">
+        
+        <div class="slds-col slds-size_1-of-2">
+            
+            <lightning:input required="true" aura:id ="newContact" value="{!v.ContactRecord.Phone}" name="FirstName" label="Enter a Phone" />
+            
+        </div>
+        
+    </div>    
+    
+    <div >
+        
+        <lightning:button variant="Brand" label="Add To Review" title="Brand action" onclick="{! c.fireApplicationEvent }" />
+        
+    </div>
+    
+    
+    
+</aura:component>

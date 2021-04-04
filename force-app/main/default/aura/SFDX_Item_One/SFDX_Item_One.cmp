@@ -1,0 +1,4 @@
+<aura:component>
+    <aura:registerEvent name="cmpEvent" type="c:SFDX_Component_Event" />
+    <ui:button label="fireComponent" press="{!c.fireComponentEvent}" />
+</aura:component>

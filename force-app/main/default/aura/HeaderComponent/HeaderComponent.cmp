@@ -1,0 +1,40 @@
+<aura:component>
+    <aura:attribute name="TagLine" type="String"/>
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="recordList" type="Object"/>
+    <aura:method name="updateCart" action="{!c.updateCart}" access="public">
+        <aura:attribute name="beerRecord" type="Object" />
+    </aura:method>
+    
+    <div class="slds-page-header"  style="background: rgb(81, 160, 95">    
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                  <!--<div class="slds-col slds-size_1-of-3" >
+            			<img src="{!$Resource.beerExplorer}" style="max-width:30%" />
+         		 </div>--> 
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                            <span class="slds-assistive-text">opportunity</span>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1> 
+                                    <span style="font-size:1.50rem;color:black" class="slds-page-header__title slds-truncate" title="Rohde Corp - 80,000 Widgets">{!v.TagLine}</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <p  style="font-size:1.20rem;color:black" class="slds-page-header__name-meta">{!v.message}</p>
+                    </div>
+                </div>
+            </div>
+            <c:CartInfo recordList="{!v.recordList}"/>
+        </div>
+    </div>
+<div class="slds-docked-form-footer">
+<button type="button" class="slds-button slds-button_neutral">Home</button>
+<button type="button" class="slds-button slds-button_brand">Cancel</button>
+</div>
+</aura:component>

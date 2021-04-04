@@ -1,0 +1,8 @@
+<aura:component >
+   
+    <h1 class="slds-p-top_medium">
+       I am in Application Source Component
+    </h1>
+    <br/>
+    <lightning:button label="Fire Application Event" onclick="{!c.executeEvent}"/>
+</aura:component>

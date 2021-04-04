@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	 <aura:registerEvent name="propagationEvent" type="c:CompEventforpropagation"/>
+    <lightning:button label="Start Event propagation" onclick="{!c.executeEvent}"/>
+</aura:component>

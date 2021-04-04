@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<!--Parent cmp-->
+    <div class="slds-m-around_xx-large">
+        <c:ChildComponent aura:id="childCmp"/>
+        <lightning:button variant="brand" label="Call Child Component Method  From parent Comp" onclick="{!c.callAuraMethod}" />
+    </div>
+</aura:component>

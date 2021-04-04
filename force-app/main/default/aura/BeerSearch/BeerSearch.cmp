@@ -1,0 +1,10 @@
+<aura:component>	
+    <!--This is an Child Component used taking input form search bar and passing parameter to parent component to search beer record -->
+    
+    <aura:registerEvent name="BeerEvent" type="c:SearchEvent"/>
+    
+    <div class="slds-p-around_medium">
+        <lightning:input name="inline-search-input"  isLoading="true" label="Beer Search" type="search" variant="label-hidden" aura:Id="searchInput" onchange="{!c.doSerach}"/>
+    </div>   
+    
+</aura:component>

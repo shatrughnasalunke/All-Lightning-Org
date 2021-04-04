@@ -1,0 +1,57 @@
+<aura:component implements="lightning:isUrlAddressable">
+    
+    <aura:attribute name="orderId" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="record" type="String"/>
+    <aura:attribute name="orderRecord" type="String"/>
+    <aura:attribute name="targetError" type="String"/>
+    <force:recordData aura:id="recordViewer"
+    recordId="{!v.orderId}"
+    targetRecord="{!v.record}"
+    targetFields="{!v.orderRecord}"
+    layoutType="FULL"                  
+    targetError="{!v.targetError}"/>
+    
+          <div class="slds-page-header">
+          <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+              <div class="slds-media">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-opportunity" title="Order Details">
+                    <span class="slds-assistive-text">Order Details</span>
+                           <lightning:icon iconName="standard:orders" alternativeText="New note" size="large" />
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                  <div class="slds-page-header__name">
+                    <div class="slds-page-header__name-title">
+                      <h1>
+                        <span class="slds-page-header__title slds-truncate" title="{!v.orderRecord.Name}">
+                            {!v.orderRecord.Name}
+                        </span>
+                      </h1>
+                    </div>
+                  </div>
+                  <p class="slds-page-header__name-meta">{!v.orderRecord.Name} 
+                  <p><lightning:formattedDateTime value="{!v.orderRecord.CreatedDate}" year="2-digit" month="short" day="2-digit" weekday="long"/></p>
+                  </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+   
+ 
+  <div  class="slds-p-top_small">
+      <lightning:recordForm
+        recordId="{!v.orderId}"
+        objectApiName="shatrughna94__Beer_Order__c"
+        layoutType="Full"
+        columns="2"
+        mode="ReadOnly"/>
+  </div>  
+    
+</aura:component>

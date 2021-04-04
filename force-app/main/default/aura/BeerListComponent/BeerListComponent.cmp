@@ -1,0 +1,43 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <!---This attribute used for an modal view-->
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    
+    <aura:attribute name="recordList" type="Object"/> 
+   
+    <aura:attribute name="beerId" type="String"/>
+    
+    <aura:registerEvent name="addToCart" type="c:AddToCart"/>
+    
+    
+    <div class="slds-grid slds-wrap">
+        <aura:iteration items="{!v.recordList}" var="item" indexVar="index">    
+            <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+                <lightning:card  title="{!item.Name}" iconName="standard:contact">
+                    <p class="slds-p-around_small">
+                        <div class="slds-grid slds-gutters">  
+                            <div class="slds-col slds-size_1-of-3">
+                                <img src="{!$Resource.beerExplorer}" />
+                            </div>   
+                            <div class="slds-col slds-size_2-of-3">        
+                                <b>Brewery Name</b>         : {!item.shatrughna94__brewery_Name__c}<br/>
+                                <b>Total Quantity</b>       : {!item.shatrughna94__Total_Quantity__c}<br/>
+                                <b>Alcohol</b>              : {!item.shatrughna94__Alcohol__c} %<br/>
+                                <b>Id</b>                   : {!item.shatrughna94__Id__c} <br/>
+                            </div> 
+                        </div>   
+                    </p>  
+                    <aura:set attribute="actions">
+                        <lightning:button variant="Brand" label="View Details" name="{!item.Id}" value="{item.name}" onclick="{!c.shwoInfo}"/>       
+                    </aura:set>   
+                    <aura:set attribute="footer">
+                        <lightning:button variant="Brand" label="Add to Cart" name="{!item.Id}" value="{!index}" onclick="{!c.addToCart}"/>       
+                    </aura:set>   
+                </lightning:card>
+            </div>
+        </aura:iteration> 
+    </div>
+    <!--below code is used to display data on same page  onclick view ditals button>
+    <aura:if isTrue="{!v.beerId!=null}">
+        <c:BeerDetails beerId="{!v.beerId}"/>
+    </aura:if>-->   
+</aura:component>

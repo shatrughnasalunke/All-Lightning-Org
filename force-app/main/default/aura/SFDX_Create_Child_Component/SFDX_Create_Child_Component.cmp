@@ -1,0 +1,8 @@
+<aura:component controller="AccountAuraClr">
+    <aura:attribute name="getnamelist" type="Object[]" />
+    <aura:attribute name="name" type="String" />
+    <aura:registerEvent name="getName" type="c:SFDX_Set_Name" />
+    <div onkeyup="{! c.handleKeyUp }">
+        <lightning:input aura:id="enter-search" name="enter-search" label="Search when user hits the 'enter' key" type="search" />
+    </div>
+</aura:component>

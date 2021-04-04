@@ -1,0 +1,45 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome">
+  <!--**
+* ─────────────────────────────────────────────────────────────────────────────────────────────────
+* Summary of this Component.
+*
+* Additional information:
+* 			           This Component is used create and update Beer Object record by using LDS 
+*					   concepts.
+* ──────────────────────────────────────────────────────────────────────────────────────────────────
+* @author         Shatrughna V. Salunke   <shatrughnasalunkhe@gmail.com>
+* @modifiedBy     Shatrughna V. Salunke   <shatrughnasalunkhe@gmail.com>
+* @maintainedBy   Shatrughna V. Salunke   <shatrughnasalunkhe@gmail.com>
+* @version        1.0
+* @created        31-March-2020
+* @modified       31-March-2020
+* ──────────────────────────────────────────────────────────────────────────────────────────────────
+**/-->
+  <!--Note :-  Make sure this i.e is LDS  component should be added in to the record pagelayout of perticular object  -->
+
+  <aura:attribute name="record" type="Object" />
+  <aura:attribute name="recordFields" type="Object" />
+  <aura:attribute name="recordError" type="String" />
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+  <force:recordData
+    aura:id="recordCreator"
+    layoutType="FULL"
+    targetRecord="{!v.record}"
+    targetFields="{!v.recordFields}"
+    targetError="{!v.recordError}"
+  />
+  <div>
+    <lightning:input
+      required="true"
+      value="{!v.recordFields.Name}"
+      lable="Beer Name"
+    />
+    <br />
+    <lightning:button
+      label="Save Record"
+      value="Save Record"
+      onclick="{!c.handleSave}"
+    />
+  </div>
+</aura:component>

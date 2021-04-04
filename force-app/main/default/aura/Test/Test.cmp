@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="name" type="String" default="slectId"/>  
+    {!v.name}
+    <div class="row">
+        
+                
+<p class="title">Single Selection</p>
+<ui:inputSelect class="dynamic" aura:id="name" change="{!c.onSingleSelectChange}">
+            <ui:inputSelectOption text="Any"/>
+            <ui:inputSelectOption text="Open" value="true"/>
+            <ui:inputSelectOption text="Closed"/>
+            <ui:inputSelectOption text="Closed Won"/>
+        	<ui:inputSelectOption text="Prospecting"/>
+            <ui:inputSelectOption text="Qualification"/>
+            <ui:inputSelectOption text="Needs Analysis"/>
+            <ui:inputSelectOption text="Closed Lost"/>
+    </ui:inputSelect>
+    
+</div>    
+</aura:component>

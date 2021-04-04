@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	 shatrughna salunke
+     <div class="slds-m-around_xx-large">
+        <!-- Add Child Component -->
+        <c:auraMethodeChildComponent aura:id="childCmp"/>
+        <!-- On button click child aura:method will be called-->
+        <lightning:button variant="brand" label="Call Shatrughna" onclick="{!c.callAuraMethod}" />
+    </div>
+</aura:component>

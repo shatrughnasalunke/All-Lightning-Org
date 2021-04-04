@@ -1,0 +1,11 @@
+<!--Parent Component-->
+<aura:component>
+    <aura:handler name="getName" event="c:SFDX_Set_Name" action="{!c.handleComponentEvent}" />
+    <aura:attribute name="getName" type="String" />
+    <div class="slds-box">
+        {!v.getName}
+    </div>
+    <div>
+        <c:SFDX_Create_Child_Component/>
+    </div>
+</aura:component>

@@ -1,0 +1,10 @@
+<!--Capture Phase Example-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:registerEvent name="SourceEvent" type="c:ComponentEvent"/> 
+     <h1 class="slds-p-top_medium">
+      This is and Source Component
+     </h1>
+    <div class="slds-p-top_medium">
+ 	   <ui:button label="fireComponent" press="{!c.fireComponentEvent}" /> 
+    </div>
+</aura:component>

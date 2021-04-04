@@ -1,0 +1,4 @@
+<apex:page standardController="Position__c" extensions="postionExtention"  showHeader="false" sidebar="false">
+    <p>You are viewing the {!Position__c.name} record .</p>
+    Sample Encrypted Bank Account:  <apex:outputField value="{!Position__c.Name}" /><br />
+</apex:page>

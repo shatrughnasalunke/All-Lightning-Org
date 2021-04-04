@@ -1,0 +1,7 @@
+<aura:component >
+    <hr/>
+    <b>Handler Component</b>
+    <aura:attribute name="messageFromEvent" type="String"/>
+    <aura:handler event="c:appEvent" action="{!c.handleApplicationEvent}"/>
+    <p>{!v.messageFromEvent}</p>
+</aura:component>

@@ -1,0 +1,5 @@
+<aura:component implements="lightning:isUrlAddressable">
+	<h1>
+        Shatrughna Salunke
+    </h1>    
+</aura:component>

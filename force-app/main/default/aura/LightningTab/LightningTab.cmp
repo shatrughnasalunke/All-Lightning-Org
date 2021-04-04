@@ -1,0 +1,44 @@
+<aura:component >
+    <aura:attribute name="accinfo" type="String"/>
+    <lightning:tabset selectedTabId="acc" variant="scoped">
+        <lightning:tab  onactive="{! c.handleActive }" label="Account" id="acc">
+           {!v.accinfo}
+        </lightning:tab>
+        
+        <lightning:tab  onactive="{! c.handleActive }" label="Contact" id="con">
+           Contact info
+        </lightning:tab>
+        
+        <lightning:tab  onactive="{! c.handleActive }" label="Case" id="Case">
+		  Case Info       
+        </lightning:tab>
+        
+        
+        <lightning:tab  onactive="{! c.handleActive }" label="opportunity" id="Oppo">
+		  Opportunity Info       
+        </lightning:tab>
+        
+    </lightning:tabset>
+    
+    
+    
+    <lightning:tabset selectedTabId="acc"  variant="vertical">
+        
+        <lightning:tab  onactive="{! c.handleActive }" label="Account" id="acc">
+           {!v.accinfo}
+        </lightning:tab>
+       
+        <lightning:tab  onactive="{! c.handleActive }" label="Contact" id="con">
+           Contact info
+        </lightning:tab>
+        
+        <lightning:tab  onactive="{! c.handleActive }" label="Case" id="Case">
+		  Case Info       
+        </lightning:tab>
+        
+         <lightning:tab  onactive="{! c.handleActive }" label="Opportunity" id="Oppo">
+		  Opportunity Info       
+        </lightning:tab>
+        
+    </lightning:tabset>
+</aura:component>

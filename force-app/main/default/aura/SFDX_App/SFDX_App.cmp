@@ -1,0 +1,4 @@
+<aura:component>
+    <aura:handler event="c:SFDX_Application_Event" action="{!c.doHandle}" />
+
+</aura:component>

@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:attribute name="eventMessage" type="String"/> 
+    <aura:handler name="ergEvent" event="c:searecevt" action="{!c.parentComponentEvent}"/>
+    <div class="slds-m-around_xx-large">
+        <c:childCmp /> 
+        <p>{!v.eventMessage}</p> 
+    </div>
+</aura:component>

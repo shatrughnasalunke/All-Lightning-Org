@@ -1,0 +1,6 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId,force:hasSobjectName">
+    <div>
+        <h1>I am in quick action</h1>
+        {!v.recordId}
+    </div>   
+</aura:component>

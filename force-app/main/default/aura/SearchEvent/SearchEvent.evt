@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template" >
+    <!--This is an application event-->
+    <aura:attribute name="serachText" type="String"/>
+</aura:event>

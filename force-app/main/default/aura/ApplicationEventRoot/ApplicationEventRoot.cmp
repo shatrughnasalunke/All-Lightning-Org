@@ -1,0 +1,7 @@
+<aura:component >
+	<aura:handler  event="c:ApplicationEvent" action="{!c.handleComponentEvent}" includeFacets="true" phase="capture"/> 
+	<h1 class="slds-p-top_medium">
+       I am in Application Root Component.
+    </h1>
+    {!v.body}
+</aura:component>

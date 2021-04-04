@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForRecordHome" access="global">
+    <aura:attribute name="chkboxvalue" type="boolean"/>    
+    <div class="slds-m-around--large">
+        <div class="slds-form-element">
+            <label class="slds-checkbox_toggle slds-grid">
+                <span class="slds-form-element__label slds-m-bottom_none">Toggle Button Label </span>
+                <ui:inputCheckbox aura:id="chkbox" class="slds-input" change="{!c.getButtonValue}"/>
+                <span id="toggle-desc" class="slds-checkbox_faux_container" aria-live="assertive">
+                    <span class="slds-checkbox_faux"></span>
+                    <span class="slds-checkbox_on">Enabled</span>
+                    <span class="slds-checkbox_off">Disabled</span>
+                </span>
+            </label>
+            <p>
+           		 <aura:if isTrue="{!v.chkboxvalue}">
+    			 <c:MultiSelectPicklist/>
+   		    	 <aura:set attribute="else">
+      			 False
+    			</aura:set>
+   				</aura:if>            
+            </p>
+        </div> 
+    </div> 
+ </aura:component>

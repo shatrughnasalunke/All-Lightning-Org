@@ -1,0 +1,10 @@
+<aura:component controller="TestApex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <aura:attribute name="myvalue" type="String" default="Shatrughna Salunke"/>
+    <aura:attribute name="getValue" type="Object" />
+    <aura:iteration items="{!v.getValue}" var="item">
+        {!item.Id}
+        <br/>
+        {!item.Name}
+    </aura:iteration>   
+</aura:component>

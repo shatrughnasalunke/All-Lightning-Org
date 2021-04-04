@@ -1,0 +1,40 @@
+<!--Sample.cmp-->
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global">
+    
+  
+    
+    <!--https://www.biswajeetsamal.com/blog/craete-record-using-lightning-data-service/-->
+    
+    
+    <div class="slds-m-around--xx-large">
+        <lightning:card title="Lead" iconName="standard:lead" class="slds-p-around_medium">
+            <lightning:recordEditForm aura:id="leadCreateForm" objectApiName="Lead" onsuccess="{!c.handleOnSuccess}">
+            <lightning:messages />    
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                        <lightning:inputField fieldName="FirstName"></lightning:inputField>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                        <lightning:inputField fieldName="LastName"></lightning:inputField>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                        <lightning:inputField fieldName="Email"></lightning:inputField>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                        <lightning:inputField fieldName="Phone"></lightning:inputField>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                        <lightning:inputField fieldName="Company"></lightning:inputField>
+                    </div>
+                </div>
+                <lightning:button type="submit" label="Save" variant="brand"/>
+            </lightning:recordEditForm>
+        </lightning:card>
+    </div>
+    
+</aura:component>

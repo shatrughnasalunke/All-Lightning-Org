@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="isButtonActive" type="Boolean" default="true" />
+
+    <aura:attribute name="attrsummary" type="String"/>
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+
+    <lightning:button variant="brand"  label="fillme" onclick="{!c.fillme}" disabled= "{!v.isButtonActive}" />
+
+    <lightning:input label="summary" aura:id="inpsummary" name="summary" onchange = "{!c.activeButton}" />
+    
+</aura:component>

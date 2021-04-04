@@ -1,0 +1,21 @@
+<apex:page showHeader="false" sidebar="false" controller="RenderedControllr">
+    <apex:pageBlock rendered="{!ShowpageBlockFlag}">
+        <head>
+            <title> test </title>
+        </head>  
+    </apex:pageBlock>
+    
+ <!-- Rendered  Demo -->
+ <apex:form >
+   <apex:pageBlock >
+        <apex:commandButton value="Show Bottom Page Block" action="{!ShowBlockMethod}"/>
+   </apex:pageBlock>
+    
+   <apex:pageBlock rendered="{!ShowpageBlockFlag}">
+    Account Name  :<apex:outputField value="{!accRec.name}"/>
+         <br/>
+    Account Number :<apex:outputField value="{!accRec.accountnumber}"/>
+   </apex:pageBlock>
+ </apex:form>
+
+</apex:page>

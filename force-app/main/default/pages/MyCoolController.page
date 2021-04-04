@@ -1,0 +1,10 @@
+<apex:page showHeader="true" sidebar="true" controller="MyCoolController"> // Calling the Apex class called "MyCoolController"
+    <apex:pageblock >
+        <apex:pageblocktable value="{!accountList}" var="acc"> // Getting all Accounts in accountList, individually know as acc
+            <apex:column value="{!acc.Id}" />
+            <apex:column value="{!acc.Name}" />
+            <apex:column value="{!acc.Custom_Field__c}" /> // Get the fields defined in the query
+             <apex:column value="{!acc.Count__c}" />
+        </apex:pageblocktable>
+    </apex:pageblock>
+</apex:page>

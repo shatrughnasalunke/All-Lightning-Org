@@ -1,0 +1,8 @@
+<!--This is an Child Component-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:method name="childMessageMethod" action="{!c.getMessage}" access="public">
+         <aura:attribute name="childGreetingParam" type="String" default="Hello"/> 
+         <aura:attribute name="childPersonNameParam" type="String" default="World"/>
+    </aura:method>    
+</aura:component>

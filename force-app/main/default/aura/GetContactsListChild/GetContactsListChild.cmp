@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:registerEvent name="eventName"  type="c:ContactEvent"/>
+    <aura:attribute name="conactName" type="String" default="Shatrughna"/>
+   <aura:handler name="init"  value="this" action="{!c.doInit}"/>
+
+</aura:component>

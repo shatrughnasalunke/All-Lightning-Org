@@ -1,0 +1,16 @@
+<aura:component controller="ContactList"  access="global" >
+  
+  <!--Child Contact Component-->
+  <aura:handler name="init" value="{!this}" action="{!c.getCaseList}"/>
+  <aura:attribute name="cases" type="Contact[]"/> 
+  <aura:iteration items="{!v.cases}" var="item">
+  <lightning:card footer="Card Footer" title="{!item.FirstName}">
+    <aura:set attribute="actions">
+            {!item.FirstName}
+ 		    {!item.lastName}
+  		    {!item.Email}
+   </aura:set>
+ </lightning:card>      
+ </aura:iteration>
+ 
+</aura:component>

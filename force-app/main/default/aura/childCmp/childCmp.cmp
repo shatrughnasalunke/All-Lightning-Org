@@ -1,0 +1,14 @@
+<aura:component> 
+    
+    <aura:registerEvent name="ergEvent" type="c:searecevt"/>
+    <aura:attribute name="selectedValue" type="String"/>
+    <lightning:select label='Entity Type'   name='cmpString'  value='{!v.selectedValue}' onchange='{!c.doSerach}'>
+        <option value='Account' >Account </option >
+        <option value='Contact' >Contact </option >
+        <option value='Lead' >Lead </option >
+    </lightning:select >
+    <div class="slds-button-group" role="group">
+        <lightning:input name="inline-search-input"   label="Beer Search" type="search" variant="label-hidden" aura:Id="searchInput" onchange="{!c.doSerach}"/>
+    </div>
+
+</aura:component>

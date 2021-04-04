@@ -1,0 +1,8 @@
+<aura:component>
+
+	<aura:registerEvent name="TestEvent" type="c:TestEvent" />
+
+    <lightning:button label="Test Event" onclick="{!c.doHandle}" />
+
+
+</aura:component>

@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+   <aura:registerEvent name="registereventname" type="c:storedContactId"/>
+   <aura:attribute name="issearching"    type="Boolean" default="false"/>
+    <div  onkeyup="{!c.doSearch}">
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            label="Search when user hits the 'enter' key"
+            isLoading="{! v.issearching }"
+            type="search"/>
+    </div>
+</aura:component>

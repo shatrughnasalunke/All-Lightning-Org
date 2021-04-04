@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:registerEvent name="eventName" type="c:search_record"/> 
+    <aura:handler event="c:Search_Record_Application_Event" action="{!c.setPlaceholder}"/>
+    <aura:attribute name="placeholder" type="String"/>
+     <div onkeyup="{!c.searchrecord}">
+        	<lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            label="Search Record"
+            type="search"
+            placeholder="{!v.placeholder + ' : '}"   
+         />
+    </div>
+</aura:component>

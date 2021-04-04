@@ -1,0 +1,4 @@
+<aura:component>
+    <aura:registerEvent name="cmpEvent" type="c:SFDX_Component_Event" />
+    <lightning:button name="Remove File" label="Remove File" onclick="{!c.RemoveFile}" />
+</aura:component>

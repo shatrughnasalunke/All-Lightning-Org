@@ -1,0 +1,5 @@
+<aura:component  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="myValue" type="String" default="Shatrughna Salunke"/>
+    <aura:registerEvent name="passValueName" type="c:DispalyDataEvent"/>
+    <lightning:button variant="Brand" label="Call Me" title="Call Me" onclick="{! c.doInit }"/>
+</aura:component>

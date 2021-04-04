@@ -1,0 +1,10 @@
+<aura:component controller="TestApexClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="passValueName" event="c:DispalyDataEvent"  action="{!c.doInit}"/>
+    <aura:attribute name="accountValue" type="Object"/>
+    <c:DispalyData/>  
+    {!v.accountValue.Name}
+    <aura:iteration items="{!v.accountValue}" var="item">
+        {!item.Id}<br/>
+        {!item.Name}   
+    </aura:iteration>    
+</aura:component>

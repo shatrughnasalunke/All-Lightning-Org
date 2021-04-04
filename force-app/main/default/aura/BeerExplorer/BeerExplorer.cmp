@@ -1,0 +1,26 @@
+<!---This is an parent Component-->
+<aura:component implements="force:appHostable,lightning:isUrlAddressable"  controller="BeerSerachAuraService">    
+
+    <aura:handler name="BeerEvent" event="c:SearchEvent" action="{!c.handleComEvent}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.handleComEvent}" />
+   <!-- This attribute stored the value from database i.e beer record> --> 
+    <aura:attribute name="beerList" type="Object"/>      
+    
+    <aura:handler name="addToCart" event="c:AddToCart" action="{!c.updateCart}" />
+
+    <div>
+       <!--This component desined  for only desgining purpose-->
+        <c:HeaderComponent aura:id="headerComp"  TagLine="Search Beer " message="Search and Order Beer in easy manner!!! "/>
+    </div>   
+    
+    <!--Call Child Component-->
+     <div>
+         <c:BeerSearch/>
+    </div> 
+    <!--Call Child Beer List Component-->
+    <div>
+        
+        <c:BeerListComponent recordList="{!v.beerList}"/>
+        
+    </div> 
+</aura:component>

@@ -1,0 +1,11 @@
+<aura:component>
+    <b>  Notifer Component</b>
+    <p> Please Enter the text and then Click here to fire button </p>
+    <ui:inputText aura:id="inpId"  value="This is Really cool ..!" required="true"/>
+    
+    <aura:registerEvent name="appEvent" type="c:appEvent"/>
+    <p><lightning:button
+                         label="Click here to fire an application event"
+                         onclick="{!c.fireApplicationEvent}" />
+    </p>
+</aura:component>

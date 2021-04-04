@@ -1,0 +1,323 @@
+<apex:page controller="repeatCon" showQuickActionVfHeader="false"     sidebar="false"  showHeader="false" renderAs="pdf" standardStylesheets="false"    applyBodyTag="false">
+    
+    <head> 
+        <style>
+            
+            @page{
+            size: A4;
+            margin:2%;
+            font-family:Tahoma !important; 
+
+            }
+            
+            .Logo
+            {  
+            width:185px;
+            height:60px;
+            float:left
+            clear:both;
+            
+            }
+            .address
+            { 
+            margin-left:60px;
+            float: left;
+            position:absolute;
+            margin-top:-13px;
+            
+            
+            }
+            
+            
+            .footerimage
+            {
+            
+            position:absolute;
+            text-align: right;
+            padding: 10px 30px;
+            width: 20%;
+            }    
+            .LogoAndContents
+            {
+            width:100%;
+            
+            // border:1px solid black;
+            }
+            table
+            {
+            
+            border:2px solid black;
+            border-collapse:collapse;
+            } 
+            td
+            { 
+            vertical-align:top; 
+            
+            
+            }
+            
+        </style>
+    </head>
+    <apex:form >
+        <div class="container" style="font-family:Tahoma, Geneva, sans-serif;" >
+            
+        </div>
+        <table style="border:2px solid black;width:100%;font-size:13px;font-family:Tahoma, Geneva, sans-serif;">
+            <tr>
+                <td  style="padding:5px;border:1px solid black;width:50%">
+                    <table style="width:100%">
+                        <tr>
+                            <tb style="padding:5px;font-weight:bold;width:15px">Task No</tb>
+                            <tb>:&nbsp;</tb>
+                        </tr>
+                    </table>
+                </td>
+                <td  style="padding:5px;border:1px solid black;width:50%">
+                    <table style="width:100%">
+                        <tr>
+                            <tb style="padding:5px;font-weight:bold;width:15px"></tb>
+                            <tb>:&nbsp;</tb>
+                        </tr>
+                    </table>
+                </td>
+            </tr>        
+            <tr>
+                <td style="border:1px solid black;">
+                    <table style="width:100%">
+                        <tr>
+                            <td colspan="2" style="text-align:center;font-weight:bold;">Customers Name and Address</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:142px">Customers Name :</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:142px">Customers Address</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:142px;">Customers Contact No</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                    </table> 
+                </td>
+                <td style="border:1px solid black;">
+                    <table style="width:100%">
+                        <tr>
+                            <td colspan="2" style="text-align:center;font-weight:bold;">Date and Time Details</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:154px">Date/Time on Site</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:154px;">Date/Time of Completion</td>
+                            <td style="padding:5px;">:&nbsp; </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;"></td>
+                            <td style="padding:5px;"></td>
+                        </tr>
+                    </table> 
+                </td>
+                
+            </tr>        
+            <tr>
+                <td style="border:1px solid black;">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:97px;">Contact Person</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:97px">Telephone No</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                    </table> 
+                </td>
+                <td style="border:1px solid black;">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:102px;">Equipment Type</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:102px">Serial No</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                    </table> 
+                </td>
+                
+            </tr>        
+            <tr>
+                <td colspan="2" style="border:1px solid black;" >
+                    <table style="width:100%">
+                        <tr>
+                            <td  colspan="2" style="padding:5px;font-weight:bold;"><font style="font-weight:bold">Problems Reported/Services Rendered :</font></td>
+                        </tr>
+                        <tr>
+                            <td  colspan="2"  style="padding:5px;min-height:330px"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>        
+            <tr>
+                <td colspan="2" style="border:1px solid black;" >
+                    <table style="width:100%">
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:15px"><font style="font-weight:bold">Status</font></td>
+                            <td style="padding:5px;">:&nbsp;
+                            
+                            Use Case: Pre-populate fields with values
+A more advanced use case is when you want to let users create a record, but you also want one or more of the fields to be populated automatically based on values in a dependent field.
+
+For example, your inside sales teams’ typical quarterly quota is one fourth of their customers’ revenues from last year, upped by 10%. But that simple formula doesn’t always hold true, so you want to prefill the opportunity amount with that value, but let the user modify it. The benefit of the action is that users can do this efficiently without having to navigate to the full opportunity record page.
+
+To create this sample action, follow the same steps as before for creating the opportunity quick action:
+
+In the object management settings for accounts, go to Buttons, Links, and Actions.
+Click New Action.
+For Action Type, select Create a Record.
+For Target Object, select Opportunity.
+Pick the appropriate Record Type.
+For Label, enter New Oppty.
+Click Save.
+Once you’ve picked the fields for the action layout, you can add predefined field values for the Amount field. In this example, I’ve added a predefined value for the Amount field, using this formula:
+Account.Last_Year_Revenue_Generated__c  * 1.10  / 4
+
+You would then add this action to the Account page layout, and when users invoke it, they see a value pre-populated in the field that they can accept or override.
+                            
+                            
+                            
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>        
+            <tr>
+                <td colspan="2" style="border:1px solid black;">
+                    <table style="width:100%">
+                        <tr>
+                            <td  colspan="2" style="padding:5px;font-weight:bold;"><font style="font-weight:bold">Type Service Rendered :</font></td>
+                        </tr>
+                        <tr>
+                            <td  colspan="2"  style="padding:5px;">
+                                <table style="width:100%">
+                                    <tr style="text-align:center;">
+                                        <td><b>Installtion</b>&nbsp;</td>
+                                        <td><b>Maintenance</b>&nbsp;</td>
+                                        <td><b>Per Call Basis</b>&nbsp;</td>
+                                        <td><b>Warranty</b>&nbsp;</td>
+                                        <td><b>Others(please specify )</b>&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>        
+            <tr>
+                <td style="border:1px solid black;" >
+                    <table style="width:100%;">
+                        <tr>
+                            <td  colspan="2" style="padding:5px;font-weight:bold;"><font style="font-weight:bold">Chargeable :</font></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td  colspan="2"  style="padding:5px;">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td><b>Yes</b>&nbsp;&nbsp;</td>
+                                        <td><b>No</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td  style="border:1px solid black;" >
+                    <table style="width:100%">
+                        <tr>
+                            <td  colspan="2" style="padding:5px;font-weight:bold;"><font style="font-weight:bold">Are you satisfied with the services rendered? :</font></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td  colspan="2"  style="padding:5px;">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td><b>Yes</b>&nbsp;&nbsp;</td>
+                                        <td><b>No</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                
+            </tr>        
+            <tr>
+                <td style="border:1px solid black;">
+                    <table style="width:100%;">
+                        <tr>
+                            <td colspan="2" style="padding:5px;text-align:center;font-weight:bold;">Customer's Signature and  Company's Stamp</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:25px;">Name</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:25px">Designation</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:25px;">Date</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                    </table> 
+                </td>
+                <td style="border:1px solid black;">
+                    <table style="width:100%;">
+                        <tr>
+                            <td colspan="2" style="padding:5px;text-align:center;font-weight:bold;">Engineers Signature</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:25px;">Name</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:25px">Designation</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;font-weight:bold;width:25px;">Date</td>
+                            <td style="padding:5px;">:&nbsp;</td>
+                        </tr>
+                    </table> 
+                </td>
+            </tr>        
+            <tr>
+                <td colspan="2">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="padding:5px;">Shatrughna Salunke</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>        
+            
+        </table>
+        
+       <table>
+          <apex:repeat value="{!strings}" var="string" id="theRepeat">
+                <td style="border:1px solid black;">
+                    <table style="width:100%;">
+                        <tr>
+                            <td colspan="2" style="padding:5px;text-align:center;font-weight:bold;">abcvd Test<br/>
+                            </td>
+                        </tr>
+                    </table> 
+                </td>
+          </apex:repeat>
+        </table>
+        
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,18 @@
+<aura:component implements="lightning:isUrlAddressable">
+   
+    <aura:attribute name="beerId" type="String" />
+    <!-- <aura:attribute name="beerName" type="String" /> -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!-- USE LDS to get the new template of Beer Order Record -->
+    <aura:attribute name="newRecordObject" type="Object"/>
+    <aura:attribute name="beerOrder" type="Object"/>
+    <aura:attribute name="newRecordError" type="String"/>
+    <force:recordData aura:id="newRecordCreator"
+                      layoutType="FULL"
+                      targetRecord="{!v.newRecordObject}"
+                      targetFields ="{!v.beerOrder}"
+                      targetError="{!v.newRecordError}"
+                      mode="EDIT"
+                      />
+	
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component>
+    <aura:attribute name="colorPalette" type="String[]" default="['red', 'green', 'blue']" />
+    <aura:attribute name="colorPalette_one" type="List" default="['red', 'green', 'blue']" />
+    <aura:attribute name="sectionLabels" type="Map" default="{ a: 'label1', b: 'label2' }" />
+    <aura:attribute name="collection" type="Set" default="['red', 'green', 'blue']" />
+    <aura:attribute name="acct" type="Account" />
+    <aura:attribute name="acct_one" type="Beer__C" />
+
+    <aura:attribute name="numbers" type="List" />
+    <lightning:button onclick="{!c.getNumbers}" label="Display Numbers" />
+
+    <aura:iteration var="num" items="{!v.numbers}">
+        {!num.value}
+    </aura:iteration>
+
+</aura:component>

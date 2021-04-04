@@ -1,0 +1,7 @@
+<aura:component>
+    <aura:attribute name="pressButton" type="Aura.Action" required="true" />
+    <aura:attribute name="pressDiv" type="Aura.Action" required="true" />
+
+    <ui:button aura:id="theButton" label="Press Me" press="{!v.pressButton}" />
+    <div aura:id="theDiv" onclick="{!v.pressDiv}">Click Me</div>
+</aura:component>

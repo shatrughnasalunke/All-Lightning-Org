@@ -1,0 +1,18 @@
+<aura:component   access="global">
+    
+    <aura:attribute type="Integer" Name="Input1"  Description="This field is used to take first input" />
+    <aura:attribute type="Integer" Name="Input2" Description="This field is used to take Second input" />
+    <aura:attribute type="Integer" Name="Input3" Description="This field is used to take Second input" />
+
+    <lightning:input type="Number" value="{!v.Input1}" label=" Enter First Value"/>
+    <lightning:input type="Number" value="{!v.Input2}" label=" Enter second Value"/>
+
+    <br/>The output is :{!v.Input3} <br/><br/>
+    
+    <lightning:Button  variant="Brand"   value="Component Methode" label="Addition" onclick="{!c.Addition}"/>
+    <lightning:Button  variant="Brand"   value="Component Methode" label="Substraction" onclick="{!c.Substraction}"/>
+    <lightning:Button  variant="Brand"   value="Component Methode" label="MultiPlication" onclick="{!c.MultiPlication}"/>
+    <lightning:Button  variant="Brand"   value="Component Methode" label="Devide" onclick="{!c.Devide}"/>
+    <lightning:button label="Reset Value " onclick="{!c.Reset}" variant="brand" />
+
+</aura:component>

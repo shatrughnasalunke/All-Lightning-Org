@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="testId" type="String"/>
+    
+    <lightning:navigation aura:id="testNavigation"/>
+    
+    <div class="slds-p-around_small">
+        
+
+        <div>   
+            <lightning:button value="Order Now1" label="Order Now1" variant="Brand" onclick="{!c.doOrder}"/>
+        </div>     
+   
+    </div> 
+    
+    
+    
+</aura:component>

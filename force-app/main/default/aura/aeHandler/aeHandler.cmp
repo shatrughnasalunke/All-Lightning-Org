@@ -1,0 +1,5 @@
+<!--c:aeHandler-->
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">\
+    <aura:handler name="appEvent" event="c:aeEvent" action="{!c.handleApplicationEvent}"/>
+    <c:aeNotifier/>
+</aura:component>

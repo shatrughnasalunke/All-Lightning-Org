@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:handler name="eventName"  event="c:eventExample1" action="{!c.doHandle}"/>
+    <aura:attribute name="getValue" type="String" />
+    <aura:attribute name="Number" type="Integer"  default="0"/>
+     <p>
+        <h1>{!v.getValue} Component Fire {!v.Number} times</h1>
+    </p>    
+    <c:ChildComponentExample/>
+</aura:component>

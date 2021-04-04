@@ -1,0 +1,6 @@
+<aura:component>
+    <aura:attribute name="push" type="Boolean" default="false" />
+    <div aura:id="displayResult">No action has run yet</div>
+    <c:AuraAction aura:id="fixture" pressButton="{!c.pressButton}" pressDiv="{!c.pressDiv}" />
+
+</aura:component>

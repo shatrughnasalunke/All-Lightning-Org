@@ -1,0 +1,45 @@
+<aura:component Controller="ApprovalProcessOperation" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <br/>
+    <aura:attribute name="pending" type="Object"/>
+    <aura:attribute name="approved" type="Object"/>
+    <aura:attribute name="rejected" type="Object"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getPendingRecordJs}" />
+
+    <lightning:tabset variant="Brand">
+        <lightning:tab label="Pending Approval">
+            <div style="height: 100%">
+                <lightning:datatable
+                                     keyField="id"
+                                     columns="{!v.mycolumns }"
+                                     data="{!v.pending}"
+                                     hideCheckBoxColumn="true"
+                                     >
+                </lightning:datatable>
+            </div>
+        </lightning:tab>
+        <lightning:tab label="Approved">
+            <div style="height: 300px">
+                
+                {!v.pending}
+            </div>
+        </lightning:tab>
+        <lightning:tab label="Rjected">
+            <div style="height: 300px">
+                {!v.pending}
+            </div>
+        </lightning:tab>
+        <lightning:tab label="New">
+            <div style="height: 300px">
+                {!v.pending}
+            </div>
+        </lightning:tab>
+        
+        <lightning:tab label="Closed">
+            <div style="height: 300px">
+                {!v.pending}
+            </div>
+        </lightning:tab>
+        
+    </lightning:tabset>
+</aura:component>

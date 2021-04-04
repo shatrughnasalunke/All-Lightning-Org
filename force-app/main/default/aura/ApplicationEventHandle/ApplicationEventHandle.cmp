@@ -1,0 +1,8 @@
+<aura:component >
+	   
+    <aura:handler  event="c:ApplicationEvent" action="{!c.handleComponentEvent}"/> 
+	<h1 class="slds-p-top_medium">
+       I am in Application Handel Component
+    </h1>
+    {!v.body}
+</aura:component>

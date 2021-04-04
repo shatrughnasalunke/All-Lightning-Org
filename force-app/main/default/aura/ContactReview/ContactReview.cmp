@@ -1,0 +1,60 @@
+<aura:component >
+    
+    <aura:attribute name="contactRecords" type="Object"/>
+    <aura:registerEvent name="SelectedRecordEvent" type="c:SelectedRecordEvent"/>
+    
+    <aura:if isTrue="{!v.contactRecords.length > 0}" >
+    <div class="slds-p-around_small">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="First Name">First Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Last Name">Last Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Email">Email</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Title">Title</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration  items="{!v.contactRecords}" var="con" indexVar="index">
+                    
+                    <tr class="slds-hint-parent">
+                        <td data-label="Account Name">
+                            <div class="slds-truncate" title="{!con.FirstName}">{!con.FirstName}</div>
+                        </td>
+                        <td data-label="Close Date">
+                            <div class="slds-truncate" title="{!con.LasttName}">{!con.LastName}</div>
+                        </td>
+                        <td data-label="Prospecting">
+                            <div class="slds-truncate" title="{!con.Email}">{!con.Email}</div>
+                        </td>
+                        <td data-label="Confidence">
+                            <div class="slds-truncate" title="{!con.Title}">{!con.Title}</div>
+                        </td>
+                        <td data-label="Amount">
+                            <div class="slds-truncate" title="{!con.Phone}">{!con.Phone}</div>
+                        </td>
+                        <td data-label="Contact">
+                            <div class="slds-col slds-size_1-of-4">
+                                {!con.Phone}  &nbsp;<a href="JavaScript:Void(0);" id="{!index}" onclick="{!c.RemoveRecord}">Remove</a>
+                                &nbsp;<a href="JavaScript:Void(0);" id="{!index}" onclick="{!c.editRecord}">Edit</a>
+                            </div>
+                        </td>
+                    </tr>    
+                </aura:iteration>   
+                
+            </tbody>
+        </table>
+    </div>
+    </aura:if>    
+</aura:component>

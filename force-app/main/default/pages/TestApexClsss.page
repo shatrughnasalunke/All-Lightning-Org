@@ -1,0 +1,16 @@
+<apex:page controller="testApexxxx" showHeader="false" sidebar="false">
+    <head> 
+       <title> Test Shatrughna</title>
+    </head>
+    <apex:form >
+        <apex:pageBlock >
+            Current URL is {!currentURL}
+        </apex:pageBlock>
+        
+         <apex:pageBlock >
+             
+             <apex:commandButton action="{!getRecord}" value="Save" id="theButton"/>
+
+        </apex:pageBlock> 
+    </apex:form> 
+</apex:page>

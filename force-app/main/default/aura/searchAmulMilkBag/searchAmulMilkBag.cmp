@@ -1,0 +1,25 @@
+<aura:component  implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+  <div class="c-container">
+      
+    <lightning:layout multipleRows="true" horizontalAlign="center">
+       
+    <lightning:layoutItem flexibility="auto" padding="around-small" >
+                        <lightning:select aura:id="select" name="select" label="" variant=" label-hidden " value="" >
+                            <option value="milk">All</option>
+                            <option value="milk">Amul Milk</option>
+                            <option value="icecream">Amul Icecream</option>
+                            <option value="paneer">Paneer</option>
+                            <option value="powder">Milk Powder</option>
+                            <option value="curd">Amul Curd</option>
+                            <option value="buttermilk">Amul Butter Milk</option>
+                        </lightning:select>
+     </lightning:layoutItem>
+     <div style="padding:18px"> 
+             <lightning:layoutItem flexibility="auto" padding="around-small" >
+                        <lightning:button variant="brand" label="Search" title="Brand action" onclick="{! c.handleClick }" />
+                        <lightning:button variant="Neutral" label=" New" title="New action" onclick="{! c.handleClick }" />
+             </lightning:layoutItem>              
+     </div>     
+     </lightning:layout>
+    </div>
+</aura:component>

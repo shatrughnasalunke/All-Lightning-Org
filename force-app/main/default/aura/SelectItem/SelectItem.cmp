@@ -1,0 +1,158 @@
+<aura:component  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:registerEvent name="appeventname" type="c:Search_Record_Application_Event"/>
+    <br/>
+    <aura:attribute name="listrecord" type="Object"/>
+    <aura:attribute name="tabId" type="String" />
+    <aura:attribute name="amul_milk" type="Object"/>
+    <aura:attribute name="amul_icecream" type="Object"/>
+    <aura:attribute name="amul_paneer" type="Object"/>
+    <aura:attribute name="amul_butter_milk" type="List"/>
+    <aura:attribute name="amul_curd" type="List"/>
+    <aura:attribute name="setAuraId" type="integer" default="1"/>
+    <aura:handler name="change" value="{!v.listrecord}" action="{!c.handleChange}"/>
+    <lightning:tabset variant="vertical" selectedTabId="{!v.tabId}" onselect="{!c.selectedTab}">
+        <!--<aura:if isTrue="{!and (v.listrecord.cntsLst.length  > 0, v.listrecord.leadlist.length > 0)}">-->    
+        <lightning:tab aura:id="fName1" title="All Product" label="All Product" id="1">
+            <div style="height: 300px">
+                <div class="slds-theme_default" >
+                    <aura:if isTrue="{!v.listrecord.cntsLst.length > 0}">
+                        <div class="slds-card">
+                            <div class="slds-text-heading_medium">
+                                <strong>Search Result Based On Acount Name</strong>
+                            </div>
+                            <lightning:accordion >
+                                <lightning:accordionSection name="Lead" label="Lead">
+                                    <aura:set attribute="body">
+                                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                            <thead>
+                                                <tr class="slds-text-title--caps">
+                                                    <th scope="col">
+                                                        <div class="slds-truncate" title="Name">Name</div>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <div class="slds-truncate" title="FirstName">FirstName</div>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <div class="slds-truncate" title="LastName">LastName</div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <aura:iteration items="{!v.listrecord.leadlist}" var="lea">
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div class="slds-truncate" title="{#lea.Name}">{#lea.Name}</div>
+                                                        </th>
+                                                        <th scope="row">
+                                                            <div class="slds-truncate" title="{#lea.FirstName}">{#lea.FirstName}</div>
+                                                        </th>
+                                                        <th scope="row">
+                                                            <div class="slds-truncate" title="{#lea.LastName}">{#lea.LastName}</div>
+                                                        </th>
+                                                        
+                                                    </tr>
+                                                </aura:iteration>
+                                            </tbody>
+                                        </table>
+                                    </aura:set>
+                                </lightning:accordionSection>
+                                <!-- second section -->
+                                <lightning:accordionSection name="Contacts" label="Contacts">
+                                    <aura:set attribute="body">
+                                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                            <thead>
+                                                <tr class="slds-text-title--caps">
+                                                    <th scope="col">
+                                                        <div class="slds-truncate" title="Id">Id</div>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <div class="slds-truncate" title="Name">Name</div>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <div class="slds-truncate" title="AccountName">AccountName</div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <aura:iteration items="{!v.listrecord.cntsLst}" var="con">
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div class="slds-truncate" title="{#con.Id}">{#con.Id}</div>
+                                                        </th>
+                                                        <th scope="row">
+                                                            <div class="slds-truncate" title="{#con.Name}">{#con.Name}</div>
+                                                        </th>
+                                                        <th scope="row">
+                                                            <div class="slds-truncate" title="{#con.Account.Name}">{#con.Account.Name}</div>
+                                                        </th>
+                                                    </tr>
+                                                </aura:iteration>
+                                            </tbody>
+                                        </table>
+                                    </aura:set>
+                                </lightning:accordionSection>
+                            </lightning:accordion>
+                        </div>
+                    </aura:if>
+                </div>
+            </div>
+        </lightning:tab>
+        <!--</aura:if>-->    
+        <lightning:tab aura:id="fName2" title="Amul" label="Amul">
+            <div style="height: 100%">
+                <lightning:datatable
+                                     keyField="id"
+                                     columns="{!v.mycolumns }"
+                                     data="{!v.amul_milk}"
+                                     hideCheckBoxColumn="true"
+                                     >
+                </lightning:datatable>
+            </div>
+        </lightning:tab>
+        <lightning:tab aura:id="fName" title="Aavin" label="Aavin">
+            <div style="height: 300px">
+                {!v.amul_paneer}
+            </div>
+        </lightning:tab>
+        <lightning:tab aura:id="fName" title="MILMA" label="MILMA">
+            <div style="height: 300px">
+                {!v.amul_butter_milk}
+            </div>
+        </lightning:tab>
+        <lightning:tab aura:id="fName" title="OMFED" label="OMFED">
+            <div style="height: 300px">
+                {!v.amul_curd}
+            </div>
+        </lightning:tab>
+        <lightning:tab aura:id="fName" title="Kwality Limited" label="Kwality Limited">
+            <div style="height: 300px">
+                {!v.amul_curd}
+            </div>
+        </lightning:tab>
+        <lightning:tab aura:id="fName" title="Dudhsagar Dairy" label="Dudhsagar Dairy">
+            <div style="height: 300px">
+                {!v.amul_curd}
+            </div>
+        </lightning:tab>
+        <lightning:tab aura:id="fName" title="KMF" label="KMF">
+            <div style="height: 300px">
+                {!v.amul_curd}
+            </div>
+        </lightning:tab>
+        <lightning:tab aura:id="fName" title="AP Dairy" label="AP Dairy">
+            <div style="height: 300px">
+                {!v.amul_curd}
+            </div>
+        </lightning:tab>
+        <lightning:tab   aura:id="fName" title="Mother Dairy" label="Mother Dairy" >
+            <div style="height: 300px">
+                {!v.amul_curd}
+            </div>
+        </lightning:tab>
+        <lightning:tab  aura:id="fName" title="Schreiber Dynamix Dairy" label="Schreiber Dynamix Dairy">
+            <div style="height: 300px">
+                {!v.amul_curd}
+            </div>
+        </lightning:tab>
+    </lightning:tabset>
+</aura:component>

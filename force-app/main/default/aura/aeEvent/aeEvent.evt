@@ -1,0 +1,4 @@
+<!--c:aeEvent-->
+<aura:event type="COMPONENT">
+    <aura:attribute name="conRecord" type="Contact"/>
+</aura:event>

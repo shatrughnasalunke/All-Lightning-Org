@@ -1,0 +1,51 @@
+<!--Sample.cmp-->
+<aura:component controller="TestController" implements="flexipage:availableForAllPageTypes,force:appHostable">
+    <!--Declare Attributes-->
+    <aura:attribute name="industryMap" type="Map"/>
+     <aura:attribute name="industryMapValues" type="Map"/>
+    <aura:attribute name="acc" type="Account" default="{'sobjectType':'Account', 
+                                                       'Name': '',
+                                                       'AccountNumber': '',
+                                                       'Email': '',
+                                                       'Phone': '',
+                                                       'shatrughna94__Country__c':'',
+                                                       'Industry': ''}"/>
+    <aura:attribute name="isDisabled" type="boolean" default="true"/>
+    <!--Declare Handler-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  
+     
+    <!--Component Start-->
+    <div class="slds-m-around--xx-large">
+        
+        <div class="container-fluid">
+           
+            <div class="form-group">
+          
+                <lightning:select aura:id="industryPicklist" value="{!v.acc.shatrughna94__Country__c}" onchange="{!c.handleCompanyOnChange}" name="CountryPicklist" label="Country" required="true">
+                    <option value="">--None--</option>
+                    <aura:iteration items="{!v.industryMap}" var="ind" indexVar="key">
+                        <option text="{!ind.value}" value="{!ind.key}" selected="{!ind.value==v.acc.shatrughna94__Country__c}" />
+                    </aura:iteration>
+                </lightning:select>
+                
+            </div>
+            
+            <div class="form-group">
+                
+                
+            </div>
+             <div class="form-group">
+                 
+                <lightning:select aura:id="industryPicklist" value="{!v.acc.BillingCountry}" label="State" disabled="{!v.isDisabled}">
+                    <option value="">--None--</option>
+                    <aura:iteration items="{!v.industryMapValues}" var="ind" indexVar="key">
+                        <option text="{!ind}"/>
+                    </aura:iteration>
+                </lightning:select>
+            </div>
+        </div>
+        <br/>
+         <!-- <lightning:button variant="brand" label="Submit" onclick="{!c.handleAccountSave}" /> -->             
+    </div>
+    <!--Component End-->
+</aura:component>

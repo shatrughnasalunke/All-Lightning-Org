@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="ObjRec" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="recordId" type="Id" />
+    <lightning:outputField fieldName="Id" />    
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:handler event="lightning:tabUpdated" action="{!c.onTabUpdated }"/>
+     <aura:handler event="lightning:tabRefreshed" action="{!c.onTabRefreshed }"/> 
+    
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.recordId}"
+                      targetRecord="{!v.record}"
+                      layoutType = "FULL"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.handleRecordUpdated}"
+                      />
+    shatrughna salunke
+     shatrughna salunke
+</aura:component>

@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="parentAttribute"  type="String" default="Parent Attribute" />
+    
+    <div>
+              <br/>
+              <p>Parent Attribute In Parent Component: {!v.parentAttribute}</p> 
+    </div>
+    
+    <c:SFDX_Child childAttribute="{#v.parentAttribute}"/>
+    
+    <lightning:button  Name="Parent Button " label="Parent Button" onclick="{!c.parentButton}"/>
+</aura:component>

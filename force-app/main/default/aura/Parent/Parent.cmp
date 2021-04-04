@@ -1,0 +1,8 @@
+<aura:component >
+   
+    <aura:attribute name="parentAttr" type="String" default="Parent Comp"/>
+    {!v.parentAttr}
+    <c:Child childAttr="{!v.parentAttr}"/>
+    <lightning:button label="Chnage Parent Attribute" onclick="{!c.chnageValue1}"/>
+
+</aura:component>
